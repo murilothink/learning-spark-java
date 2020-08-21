@@ -21,6 +21,9 @@ public class SparkHello {
         logData.show();
 
 
+        logData.write().format("parquet").save("/home/murilohg/Documentos/sparkFile/logdata.txt");
+        Dataset<String> teste = spark.read().textFile( "/home/murilohg/Documentos/sparkFile/logdata.txt" );
+        teste.show();
 
 
 
